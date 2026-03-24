@@ -1,0 +1,35 @@
+{
+    "graduate": {
+        "name": "ĐỖ CAO CƯỜNG",
+        "degree": "Cử nhân Khoa học Máy tính",
+        "university": "Đại học Bách khoa - Đại học Đà Nẵng",
+        "graduationYear": "2026",
+        "photoUrl": ""
+    },
+    "event": {
+        "date": "Thứ Bảy, 24 tháng 5, 2026",
+        "time": "13:30",
+        "isoDate": "2026-05-24T13:30:00",
+        "location": {
+            "venue": "Tòa nhà F, Đại học Bách khoa - Đại học Đà Nẵng",
+            "address": "54 Nguyễn Lương Bằng, Đà Nẵng",
+            "mapLink": "https://maps.app.goo.gl/a98Pq43TEezdEvrC7"
+        },
+        "schedule": [
+            {
+                "time": "13:30",
+                "activity": "Mở cửa đón khách"
+            },
+            {
+                "time": "14:00",
+                "activity": "Bắt đầu lễ tốt nghiệp"
+            },
+            {
+                "time": "14:30",
+                "activity": "Tiệc chúc mừng"
+            }
+        ]
+    },
+    "message": "Kính mời quý vị đến chung vui cùng tôi trong ngày trọng đại này.",
+    "rsvpLink": "https://example.com/rsvp"
+}

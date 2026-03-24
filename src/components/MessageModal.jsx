@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 import { sendMessage } from '../services/notificationService';
+import { useTranslation } from '../i18n';
 import './MessageModal.css';
 
 const MessageModal = ({ isOpen, onClose }) => {
     const [formData, setFormData] = useState({ name: '', text: '' });
     const [status, setStatus] = useState('idle'); // idle, sending, success, error
+    const t = useTranslation();
 
     if (!isOpen) return null;
 
@@ -32,34 +34,34 @@ const MessageModal = ({ isOpen, onClose }) => {
                 {status === 'success' ? (
                     <div className="success-message">
                         <div className="check-icon">✓</div>
-                        <h3>Message Sent!</h3>
-                        <p>Thank you for your response.</p>
+                        <h3>{t.messageSent}</h3>
+                        <p>{t.thankYou}</p>
                     </div>
                 ) : (
                     <form onSubmit={handleSubmit}>
-                        <h2>Send a Message</h2>
-                        <p>Let the graduate know you're coming or send a wish!</p>
+                        <h2>{t.sendMessage}</h2>
+                        <p>{t.modalSubtitle}</p>
 
                         <div className="form-group">
-                            <label htmlFor="name">Your Name</label>
+                            <label htmlFor="name">{t.yourName}</label>
                             <input
                                 type="text"
                                 id="name"
                                 required
                                 value={formData.name}
                                 onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                                placeholder="Enter your name"
+                                placeholder={t.namePlaceholder}
                             />
                         </div>
 
                         <div className="form-group">
-                            <label htmlFor="text">Message</label>
+                            <label htmlFor="text">{t.messageLabel}</label>
                             <textarea
                                 id="text"
                                 required
                                 value={formData.text}
                                 onChange={(e) => setFormData({ ...formData, text: e.target.value })}
-                                placeholder="Write your wishes here..."
+                                placeholder={t.messagePlaceholder}
                                 rows="4"
                             />
                         </div>
@@ -69,7 +71,7 @@ const MessageModal = ({ isOpen, onClose }) => {
                             className="send-button"
                             disabled={status === 'sending'}
                         >
-                            {status === 'sending' ? 'Sending...' : 'Send Message'}
+                            {status === 'sending' ? t.sending : t.sendButton}
                         </button>
                     </form>
                 )}

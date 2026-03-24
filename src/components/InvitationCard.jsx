@@ -1,23 +1,31 @@
 import React, { useState } from 'react';
 import MessageModal from './MessageModal';
 import { generateGoogleCalendarUrl } from '../utils/calendarUtils';
+import { useTranslation, useLang } from '../i18n';
 import './InvitationCard.css';
 
 const InvitationCard = ({ data }) => {
   const { graduate, event, message } = data;
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const t = useTranslation();
+  const lang = useLang();
 
-  const calendarUrl = generateGoogleCalendarUrl(event, graduate);
+  const calendarUrl = generateGoogleCalendarUrl(event, graduate, t);
+
+  const switchLang = lang === 'en' ? '#/vi' : '#/';
 
   return (
     <div className="invitation-card">
+      <div className="lang-switcher">
+        <a href={switchLang}>{t.switchLang}</a>
+      </div>
       <div className="card-border">
         <header className="card-header">
           <div className="school-name">{graduate.university}</div>
-          <p className="intro-text">Announces the Graduation of</p>
+          <p className="intro-text">{t.announcesGraduation}</p>
           <h1 className="graduate-name">{graduate.name}</h1>
           <div className="degree-text">{graduate.degree}</div>
-          <div className="year-text">Class of {graduate.graduationYear}</div>
+          <div className="year-text">{t.classOf} {graduate.graduationYear}</div>
         </header>
 
         <div className="divider">
@@ -29,7 +37,7 @@ const InvitationCard = ({ data }) => {
 
           <div className="details-grid">
             <div className="detail-item">
-              <h3>When</h3>
+              <h3>{t.when}</h3>
               <p className="date">{event.date}</p>
               <p className="time">{event.time}</p>
               <a
@@ -38,15 +46,15 @@ const InvitationCard = ({ data }) => {
                 rel="noreferrer"
                 className="calendar-link"
               >
-                + Add to Calendar
+                {t.addToCalendar}
               </a>
             </div>
 
             <div className="detail-item">
-              <h3>Where</h3>
+              <h3>{t.where}</h3>
               <p className="venue">{event.location.venue}</p>
               <p className="address">{event.location.address}</p>
-              <a href={event.location.mapLink} target="_blank" rel="noreferrer" className="map-link">View Map</a>
+              <a href={event.location.mapLink} target="_blank" rel="noreferrer" className="map-link">{t.viewMap}</a>
             </div>
           </div>
 
@@ -62,7 +70,7 @@ const InvitationCard = ({ data }) => {
 
         <footer className="card-footer">
           <button onClick={() => setIsModalOpen(true)} className="rsvp-button">
-            Send a Message / RSVP
+            {t.sendMessageRsvp}
           </button>
         </footer>
       </div>
