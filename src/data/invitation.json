@@ -1,0 +1,35 @@
+{
+    "graduate": {
+        "name": "DO CAO CUONG",
+        "degree": "Bachelor of Science in Computer Science",
+        "university": "Da Nang University of Science and Technology",
+        "graduationYear": "2026",
+        "photoUrl": ""
+    },
+    "event": {
+        "date": "Saturday, May 24, 2026",
+        "time": "1:30 PM",
+        "isoDate": "2026-05-24T13:30:00",
+        "location": {
+            "venue": "F Building, University of Science and Technology of Da Nang",
+            "address": "54 Nguyen Luong Bang, Da Nang",
+            "mapLink": "https://maps.app.goo.gl/a98Pq43TEezdEvrC7"
+        },
+        "schedule": [
+            {
+                "time": "1:30 PM",
+                "activity": "Doors Open"
+            },
+            {
+                "time": "2:00 PM",
+                "activity": "Ceremony Begins"
+            },
+            {
+                "time": "2:30 PM",
+                "activity": "Reception"
+            }
+        ]
+    },
+    "message": "Please join me in celebrating this milestone.",
+    "rsvpLink": "https://example.com/rsvp"
+}
