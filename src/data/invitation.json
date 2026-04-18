@@ -8,27 +8,14 @@
     },
     "event": {
         "date": "Saturday, April 25, 2026",
-        "time": "9:00 AM",
-        "isoDate": "2026-04-25T09:00:00",
+        "time": "10:00 AM",
+        "isoDate": "2026-04-25T10:00:00",
         "location": {
             "venue": "F Building, University of Science and Technology of Da Nang",
             "address": "54 Nguyen Luong Bang, Da Nang",
             "mapLink": "https://maps.app.goo.gl/a98Pq43TEezdEvrC7"
         },
-        "schedule": [
-            {
-                "time": "9:00 AM",
-                "activity": "Doors Open"
-            },
-            {
-                "time": "10:00 AM",
-                "activity": "Ceremony Begins"
-            },
-            {
-                "time": "10:30 AM",
-                "activity": "Reception"
-            }
-        ]
+        "schedule": []
     },
     "message": "Please join me in celebrating this milestone.",
     "rsvpLink": "https://example.com/rsvp"

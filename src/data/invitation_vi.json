@@ -8,27 +8,14 @@
     },
     "event": {
         "date": "Thứ Bảy, 25 tháng 4, 2026",
-        "time": "09:00",
-        "isoDate": "2026-04-26T09:00:00",
+        "time": "10:00",
+        "isoDate": "2026-04-25T10:00:00",
         "location": {
             "venue": "Tòa nhà F, Trường Đại học Bách khoa - Đại học Đà Nẵng",
             "address": "54 Nguyễn Lương Bằng, Đà Nẵng",
             "mapLink": "https://maps.app.goo.gl/a98Pq43TEezdEvrC7"
         },
-        "schedule": [
-            {
-                "time": "09:00",
-                "activity": "Mở cửa đón khách"
-            },
-            {
-                "time": "10:00",
-                "activity": "Bắt đầu lễ tốt nghiệp"
-            },
-            {
-                "time": "10:30",
-                "activity": "Tiệc chúc mừng"
-            }
-        ]
+        "schedule": []
     },
     "message": "Kính mời quý vị đến chung vui cùng tôi trong ngày trọng đại này.",
     "rsvpLink": "https://example.com/rsvp"
