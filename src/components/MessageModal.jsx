@@ -4,7 +4,7 @@ import { useTranslation } from '../i18n';
 import './MessageModal.css';
 
 const MessageModal = ({ isOpen, onClose }) => {
-    const [formData, setFormData] = useState({ name: '', text: '' });
+    const [formData, setFormData] = useState({ name: '', text: '', attending: true });
     const [status, setStatus] = useState('idle'); // idle, sending, success, error
     const t = useTranslation();
 
@@ -19,7 +19,7 @@ const MessageModal = ({ isOpen, onClose }) => {
             setTimeout(() => {
                 onClose();
                 setStatus('idle');
-                setFormData({ name: '', text: '' });
+                setFormData({ name: '', text: '', attending: true });
             }, 2000);
         } catch (error) {
             setStatus('error');
@@ -41,6 +41,26 @@ const MessageModal = ({ isOpen, onClose }) => {
                     <form onSubmit={handleSubmit}>
                         <h2>{t.sendMessage}</h2>
                         <p>{t.modalSubtitle}</p>
+
+                        <div className="form-group">
+                            <label>{t.attendingQuestion}</label>
+                            <div className="attendance-toggle">
+                                <button
+                                    type="button"
+                                    className={`toggle-btn ${formData.attending === true ? 'active' : ''}`}
+                                    onClick={() => setFormData({ ...formData, attending: true })}
+                                >
+                                    {t.yesAttending}
+                                </button>
+                                <button
+                                    type="button"
+                                    className={`toggle-btn ${formData.attending === false ? 'active' : ''}`}
+                                    onClick={() => setFormData({ ...formData, attending: false })}
+                                >
+                                    {t.noAttending}
+                                </button>
+                            </div>
+                        </div>
 
                         <div className="form-group">
                             <label htmlFor="name">{t.yourName}</label>

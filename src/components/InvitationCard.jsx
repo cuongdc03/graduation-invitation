@@ -25,7 +25,7 @@ const InvitationCard = ({ data }) => {
           <p className="intro-text">{t.announcesGraduation}</p>
           <h1 className="graduate-name">{graduate.name}</h1>
           <div className="degree-text">{graduate.degree}</div>
-          <div className="year-text">{t.classOf} {graduate.graduationYear}</div>
+
         </header>
 
         <div className="divider">

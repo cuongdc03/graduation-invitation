@@ -157,3 +157,39 @@
         transform: scale(1);
     }
 }
+
+.attendance-toggle {
+    display: flex;
+    gap: 10px;
+    margin-top: 0.5rem;
+}
+
+.toggle-btn {
+    flex: 1;
+    padding: 0.8rem;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    background-color: white;
+    color: var(--color-text-muted);
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.toggle-btn:hover {
+    border-color: var(--color-gold);
+}
+
+.toggle-btn.active {
+    background-color: var(--color-gold);
+    color: white;
+    border-color: var(--color-gold);
+    font-weight: bold;
+}
+
+@media (max-width: 480px) {
+    .attendance-toggle {
+        flex-direction: column;
+    }
+}

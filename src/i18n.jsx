@@ -23,6 +23,9 @@ const translations = {
     calendarDetails: (name, university) =>
       `Join us to celebrate the graduation of ${name} from ${university}.`,
     switchLang: 'Tiếng Việt',
+    attendingQuestion: 'Will you be attending?',
+    yesAttending: 'Yes, I will be there',
+    noAttending: 'No, I cannot make it',
   },
   vi: {
     announcesGraduation: 'Trân trọng thông báo Lễ Tốt Nghiệp của',
@@ -46,6 +49,9 @@ const translations = {
     calendarDetails: (name, university) =>
       `Kính mời bạn đến chung vui lễ tốt nghiệp của ${name} tại ${university}.`,
     switchLang: 'English',
+    attendingQuestion: 'Bạn sẽ tham dự chứ?',
+    yesAttending: 'Có, tôi sẽ đến',
+    noAttending: 'Rất tiếc, tôi không thể đến',
   },
 };
 

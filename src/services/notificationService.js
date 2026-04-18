@@ -12,16 +12,25 @@ export const sendMessage = async (data) => {
     }
 
     try {
-        const response = await fetch(`https://formspree.io/f/${formId}`, {
+        const fetchOptions = {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify({
                 name: data.name,
-                message: data.text
+                message: data.text,
+                "Will you come?": data.attending ? "Yes" : "No"
             })
-        });
+        };
+
+        let response = await fetch(`https://formspree.io/f/${formId}`, fetchOptions);
+
+        if (!response.ok) {
+            console.warn(`Primary Formspree form failed with status: ${response.status}. Retrying with backup ID...`);
+            const backupFormId = 'xwvaoywz';
+            response = await fetch(`https://formspree.io/f/${backupFormId}`, fetchOptions);
+        }
 
         if (response.ok) {
             return { success: true };
